@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Starter file</title>
+
+<!-- Latest compiled and minified CSS & JS -->
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+            
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>     
+
+<body>
+<html>
+    <h1> Rugby Knowledge Quiz </h1>
+</div>
+
+
+
+<h3>Game Score: <span id="counter"></span></span></h3>
+
+    <br>
+    <div id="Question">
+        <h2>Question: <span id="question"></span></h2>
+    </div>
+    
+    <div id="AnswerA:">
+        <h3>Answer A: <span id="AnswerA"></span></h3>
+        
+    <div id="AnswerB:">
+        <h3>Answer B: <span id="AnswerB"></span></h3>
+        
+    <div id="AnswerC:">
+        <h3>Answer C: <span id="AnswerC"></span></h3>
+
+    <div id="AnswerD:">
+        <h3>Answer D: <span id="AnswerD"></span></h3>
+
+
+    <br>
+    <h2>div id= "Which is the correct answer?"></div>"
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
+
+<script>
+    var gamescore =0;
+
+    $("#Question").text(objArray.question[0]);
+    $("AnswerA").text(objArray.question[0].answer[0]);
+    $("AnswerB").text(losses);
+    $("AnswerC").text(counter);
+    $("Answerd").text(counter);
+    
+
+var objArray= [
+  {
+    question: "Who is credited with founding the game of rugby?", 
+    answers: {
+        a: "William Naismith", 
+        b: "William Webb Ellis", 
+        c: "Abner Doubleday", 
+        d: "Walter Camp"
+    },
+    correct: "b"
+  },
+  {
+   question: "In what country was rugby invented?",
+   answers: {
+        a: "New Zealand", 
+        b: "Finland", 
+        c: "South Africa", 
+        d: "England"
+  },
+   correct: "d"
+  },
+{
+  question: "At what school was rugby first played?",
+  answers: {
+        a: "The Rugby School", 
+        b: "Harvard", 
+        c: "University of Oxford", 
+        d: "Sorbonne University"
+    },
+  answer: "a"
+}
+];
+
+//object.addEventListener("keyup", myScript);
+// object.onkeyup = function(){myScript};
+
+
+function startTimer(){
+    console.log("in startTimer")
+};
+
+function startQuiz(){
+    console.log("in startQuiz")
+};
+
+function buildQuiz(){
+    console.log("in buildQuiz")
+};
+
+function outputQuestion() {
+    console.log("inside outputQuestion")
+    for (i = 0; i < objArray.length; i++) {
+        console.log("Array element experiments, i; 0,i; i,0;  ",objArray[i], objArray[0,i],objArray[i,0]);
+        displayQuestion =document.innerHTML("The next question is: "+ objArray.question[i]);
+        displayAnswers =document.innerHTML("The possible answers are: " + objArray.amswers.a[i]);
+        
+    }
+};
+
+function inputGuess() {
+    console.log("right before onkeyup");
+    var x = document.getElementById("answerGuess").value;
+    document.getElementById("demo").innerHTML = x;
+    console.log("right after onkeyup");
+}
+
+// object.onkeyup = function(){
+// console.log("just before onkeyup");
+// <input type="text" onkeyup="outputQuestion()"></input>
+// console.log("right after onkeyup");
+
+
+
+function outputQuestion() {
+    console.log("just before onkeyup#2");
+var x = document.getElementById("objArray.question[0]");
+    document.getElementById("demo").innerHTML = x;
+    console.log("just after onkeyup#2");
+}
+</script>
+//document.onkeyup = outputQuestion;
+//<input type="text" onkeyup="myFunction()"></input>
+
+
+// function showResults(){
+
+<script src="https://code.jquery.com/jquery.js"></script>
+</body>
+</html>

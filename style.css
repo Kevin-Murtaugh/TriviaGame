@@ -1,0 +1,18 @@
+.crystalImage {
+    width: 200px;
+    height: 200px;
+     padding: 50px;
+    }
+
+.Jumbotron {
+    background-color: lightblue;
+}
+
+#stats {
+    text-align: right;
+    padding-right: 50px;
+    }
+
+#counter {
+        text-align: center;
+        }

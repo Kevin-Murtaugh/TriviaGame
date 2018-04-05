@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+<head>
+
+<html lang="en-us">    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Starter file</title>
+
+<!-- Latest compiled and minified CSS & JS -->
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+            
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+            
+<script src="https://code.jquery.com/jquery.js"></script>
+            
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
+</head>
+
+<html>
+
+<script>
+var objArray;
+
+objArray= [
+  {
+    question: "Who is credited with founding the game of rugby?", 
+    answers: {
+        a: "William Naismith", 
+        b: "William Webb Ellis", 
+        c: "Abner Doubleday", 
+        d: "Walter Camp"
+    },
+    correct: "b"
+  },
+  {
+   question: "In what country was rugby invented?",
+   answers: {
+        a: "New Zealand", 
+        b: "Finland", 
+        c: "South Africa", 
+        d: "England"
+  },
+   correct: "d"
+  },
+{
+  question: "At what school was rugby first played?",
+  answers: {
+        a: "The Rugby School", 
+        b: "Harvard", 
+        c: "University of Oxford", 
+        d: "Sorbonne University"
+    },
+  answer: "a"
+}
+];
+
+
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+var answerContainers = quizContainer.querySelectorAll('.answers');
+
+<h1> Rugby Knowledge Quiz </h1> 
+<div id="quiz"></div>
+<button id="submit">Submit Quiz</button>
+<div id="results"></div>
+
+
+function buildQuiz(){};
+
+function showResults(){
+
+// gather answer containers from our quiz
+const answerContainers = quizContainer.querySelectorAll('.answers');
+
+// keep track of user's answers
+let numCorrect = 0;
+
+// for each question...
+myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+  // find selected answer
+  const answerContainer = answerContainers[questionNumber];
+  const selector = 'input[name=question'+questionNumber+']:checked';
+  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+  // if answer is correct
+  if(userAnswer===currentQuestion.correctAnswer){
+    // add to the number of correct answers
+    numCorrect++;
+
+    // color the answers green
+    answerContainers[questionNumber].style.color = 'lightgreen';
+  }
+  // if answer is wrong or blank
+  else{
+    // color the answers red
+    answerContainers[questionNumber].style.color = 'red';
+  }
+});
+
+// show number of correct answers out of total
+resultsContainer.innerHTML = numCorrect + ' out of ' + myQuestions.length;
+}
+
+// display quiz right away
+buildQuiz();
+
+// on submit, show results
+submitButton.addEventListener('click', showResults);
+
+
+
+function buildQuiz() {
+    //store the output in HTML
+    const output = [];
+
+    //then for each question
+    myQuestions.forEach(
+        (currentQuestion, questionNumber) => {
+            //store the answer options
+            const answers = [];
+
+            //then for each answer option
+            for(letter in currentQuestion.answers) {
+                //add a button
+                answers.push
+                    `<label>
+                        <input type="radio" name="qestion${qestionNumber}"value="${letter}">
+                        ${letter} : 
+                        ${currentQuestion.answers[letter]}
+                    </label>`
+            };
+        }
+        //build the output by adding this question to it
+            output.push(
+                `<div class="question"> ${currentQuestion.question} </div>
+                <div class="answers"> ${answers.join('')} </div>`
+            );
+        }   
+    );
+//ombine output list & put it all on the page
+    quizContainer.innerHTML = output.join('');
+    }
+
+    myQuestions.forEach( (currentQuestion, questionNubmer) => {
+        // code to write for each question
+    });
+
+</body>
+</html>
