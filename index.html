@@ -1,154 +1,78 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-    
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Starter file</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" \>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<title>Starter file</title>
+</head>
 
-<!-- Latest compiled and minified CSS & JS -->
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-            
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-
-</head>  
 <body>
-<html>
-<div class="container" >
-    <!-- Jumbotron for Title -->
-  <div class="jumbotron"> 
     <div class="container">
-        <h1 class="text-center", style= "font-family: magneto">Trivia Game</h1>
-        <h3 class="text-center">You will be given a series of multiple choice questions with 30 seconds to answer.</h3>
-    
-        <h3 class="text-center"> Click on the right answer within 30 seconds and win a point.</h3>
-          
-        <h3 class="text-center">Click on the wrong answer or let the timer expire and lose a point..</h3> 
-          
-        <h4 class="text-center">We will decide at the end if you won or lost.</h4>
+        <!-- Jumbotron for Title -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="text-center" , style="font-family: magneto">Trivia Game</h1>
+                <h3 class="text-center">You will be given a series of multiple choice questions with 30 seconds to answer.</h3>
 
-        
-    </div>
-  </div>
+                <h3 class="text-center"> Click on the right answer within 30 seconds and win a point.</h3>
 
-<h3>Number of Questions: <span id="counter"></span></h3>
-<div class="row">
-    <div class="col-lg-12">
-      <div id="num-guess">
-        <div class="col-lg-6">
-  <h1>Time Remaining: <span id="countDown"></span></h1>
-        </div>
-        
-        <div id= "stats">
-          <h2>Points: <span id="points"></span></h2>
+                <h3 class="text-center">Click on the wrong answer or let the timer expire and lose a point..</h3>
+
+                <h4 class="text-center">We will decide at the end if you won or lost.Click button to start!</h4>
+
+                <button class="btn btn-primary" id="start-btn"> Start Game! </button>
+
+
+            </div>
         </div>
 
-    <br>
-    <script>
 
-//3rd different (at least) configuration of this data, hoping to get some type sof output
-var objArray;
-objArray = [
-    "Who is credited with founding the game of rugby?", "William Naismith", "William Webb Ellis", "Abner Doubleday", 
-"Walter Camp", "b",
-    "In what country was rugby invented?", "New Zealand", "Finland", "South Africa", "England", "d",
-    "At what school was rugby first played?", "The Rugby School", "Harvard", "University of Oxford", "Sorbonne University", "a",
-    "Best player at the 2107 World Cup", "Richie McCaw", "Joma", "Gretzky", "Ichiro", "a",
-    "Number of players on a rugby team (Union Rules)", "5", "9", "11", "15", "d",
-    "Number of referees to officiate?", "1", "2", "4", "10,000", "a",
-    "Point per 'Try' '(i.e., touchdown)'?", "1", "2", "5", "6", "c",
-];
-    var gamescore =0;
+        <div class="game-area">
+            <div class="feedback" style="text-align: center">
+                <div class="counter">
+                    <h1>
+                        00:
+                        <span id="counter">30</span>
+                    </h1>
+                </div>
+                <h1 class="score">
+                    Score:
+                    <span id="score">
+                        0
+                    </span>
+                </h1>
+                <div class="alert alert-info" role="alert" id="alert">Select correct answer to earn points</div>
+            </div>
+            <br>
+            <br>
+            <div id="question-area">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="question">
+                        Question Here...
+                    </div>
+                </div>
+                <span>A</span>
+                <div class="well well-sm answer-choice" id="a">...</div>
+                <span>B</span>
+                <div class="well well-sm answer-choice" id="b">...</div>
+                <span>C</span>
+                <div class="well well-sm answer-choice" id="c">...</div>
+                <span>D</span>
+                <div class="well well-sm answer-choice" id="d">...</div>
+            </div>
+        </div>
 
-//trying different structure, spelling, syntax options
-    <div id="Question">
-        <h2>Question: </h2>
     </div>
-    
-    <div id="AnswerA:">
-        <h3>Answer A: <span id="AnswerA"></span></h3></div>
-        
-    <div id="AnswerB:">
-        <h3>Answer B: <span id="AnswerB"></span></h3></div>
-        
-    <div id="AnswerC:">
-        <h3>Answer C: <span id="AnswerC"></span></h3></div>
 
-    <div id="AnswerD:"></div>
-
-
-    // <h2>"Which is the correct answer?"></h2>
-    // <button id="submit">Submit Quiz</button>
-    // <div id="results"></div>
-
-
-
-
-//object.addEventListener("keyup", myScript);
-// object.onkeyup = function(){myScript};
-
-//print something, anything...there is an unknown syntax error above here
-// still have not been able to figure out what it is
-    $("#Question").text("question",objArray[0]);
-    $("#AnswerA:").text(objArray[1]);
-    $("#AnswerB:").text(objArray[2]);
-    $("#AnswerC:").text(objArray[3]);
-    $("#AnswerD:").text(objArray[4]);
-    
-function startTimer(){
-    console.log("in startTimer")
-};
-
-function startQuiz(){
-
-    console.log("in startQuiz")
-};
-
-function buildQuiz(){
-    console.log("in buildQuiz")
-};
-
-function outputQuestion() {
-    console.log("inside outputQuestion")
-    for (i = 0; i < objArray.length; i++) {
-        console.log(objArray[0]);
-//        $("#question").html("<h2>" + objArray[0] + "</h2>");
-              
-    }
-};
-
-function inputGuess() {
-    console.log("right before onkeyup");
-    var x = document.getElementById("answerGuess").value;
-    document.getElementById("demo").innerHTML = x;
-    console.log("right after onkeyup");
-}
-
-// object.onkeyup = function(){
-// console.log("just before onkeyup");
-// <input type="text" onkeyup="outputQuestion()"></input>
-// console.log("right after onkeyup");
-
-
-
-function outputQuestion() {
-    console.log("just before onkeyup#2");
-var x = document.getElementById("objArray.question[0]");
-    document.getElementById("demo").innerHTML = x;
-    console.log("just after onkeyup#2");
-}
-</script>
-<input type="text" onkeyup="myFunction()"></input>
-
-
-
-
-
-<script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
